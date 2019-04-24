@@ -1,6 +1,9 @@
 import folium
 
-maplayer = folium.Map(location=[50.920652, 6.937008],
+lat = 50.920652         # Breitengrad vgl Äquator
+lon = 6.937008          # Längengrad vgl Greenwich
+
+maplayer = folium.Map(location=[lat, lon],
                       tiles="Stamen Toner",
                       zoom_start=15
                       )
@@ -8,7 +11,6 @@ maplayer = folium.Map(location=[50.920652, 6.937008],
 geolayer = folium.FeatureGroup()
 
 geolayer.add_child(folium.GeoJson(open("test.geojson",
-                                       encoding="utf-8-sig",
                                        ).read()))
 
 geolayer.add_to(maplayer)
