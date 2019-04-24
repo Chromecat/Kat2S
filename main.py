@@ -1,7 +1,11 @@
 import folium
+import requests
 
 lat = 50.920652         # Breitengrad vgl Äquator
 lon = 6.937008          # Längengrad vgl Greenwich
+
+r = requests.get("http://api.openweathermap.org/data/2.5/weather?lat=50.920652&lon=6.937008&appid=c30853926307db7c20b1369a94023fca")
+
 
 maplayer = folium.Map(location=[lat, lon],
                       tiles="Stamen Toner",
