@@ -3,21 +3,21 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"style": {"color": "#ff0000", "weight": 1,"fillOpacity": 0.7}},
+      "properties": {"style": {"color": "#00ff00","weight": 1,"fillOpacity": 0.7}},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              6.921386718749999,
+              6.922386718749999,
               50.91861903155828
             ],
             [
-              6.9330596923828125,
+              6.9320596923828125,
               50.91829437228241
             ],
             [
-              6.93812370300293,
+              6.93822370300293,
               50.92273118632478
             ]
           ]

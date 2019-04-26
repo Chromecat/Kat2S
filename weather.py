@@ -1,5 +1,6 @@
 import requests
 import math
+import re
 
 lat = 50.920652         # Breitengrad vgl Äquator in Grad
 lon = 6.937008          # Längengrad vgl Greenwich in Grad

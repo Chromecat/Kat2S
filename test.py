@@ -1,28 +1,20 @@
 import os
 import folium
-from folium import FeatureGroup, LayerControl, Map, Marker
 
-m = Map(
-    location=[45.372, -121.6972],
-    zoom_start=12,
-    tiles='Stamen Terrain'
-)
+print(folium.__version__)
 
-feature_group = FeatureGroup(name='Some icons')
-Marker(location=[45.3288, -121.6625],
-       popup='Mt. Hood Meadows').add_to(feature_group)
+import numpy as np
 
-Marker(location=[45.3311, -121.7113],
-       popup='Timberline Lodge').add_to(feature_group)
+data = (
+    np.random.normal(size=(100, 3)) *
+    np.array([[1, 1, 1]]) +
+    np.array([[48, 5, 1]])
+).tolist()
 
-feature_group.add_to(m)
-LayerControl().add_to(m)
+from folium.plugins import HeatMap
 
-m.save(os.path.join('FeatureGroup.html'))
+m = folium.Map([48., 5.], tiles='stamentoner', zoom_start=6)
 
-style = {'fillColor': '#00FFFFFF', 'lineColor': '#00FFFFFF'}
+HeatMap(data).add_to(m)
 
-folium.GeoJson(combined,
-               tooltip=folium.GeoJsonTooltip(fields=['LGA','MBRS'],
-                                             aliases=['Location','Members']),
-               style_function=lambda x: style).add_to(m)
+m.save(os.path.join('Heatmap.html'))
