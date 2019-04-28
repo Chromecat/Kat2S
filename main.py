@@ -1,11 +1,10 @@
 import folium
 import requests
+from tkinter import *
+import webbrowser
 
 lat = 50.920652         # Breitengrad vgl Äquator
 lon = 6.937008          # Längengrad vgl Greenwich
-
-r = requests.get("http://api.openweathermap.org/data/2.5/weather?lat=50.920652&lon=6.937008&appid=c30853926307db7c20b1369a94023fca")
-
 
 maplayer = folium.Map(location=[lat, lon],
                       tiles="Stamen Toner",
@@ -20,3 +19,18 @@ geolayer.add_child(folium.GeoJson(open("test.geojson",
 geolayer.add_to(maplayer)
 
 maplayer.save('test.html')
+
+window = Tk()
+window.title("Kat2S")
+
+
+
+def action():
+    webbrowser.open('test.html')
+    window.destroy()
+
+
+button = Button(window, text="Hit me!", command=action)
+button.pack(side=LEFT)
+
+mainloop()
