@@ -3,6 +3,7 @@ from folium import FeatureGroup, LayerControl, Map, Marker
 from folium.plugins import HeatMap
 #import requests
 
+
 lat = 50.920652         # Breitengrad vgl Äquator
 lon = 6.937008          # Längengrad vgl Greenwich
 
@@ -16,7 +17,7 @@ maplayer = folium.Map(location=[lat, lon],
 
 geolayer = folium.FeatureGroup()
 
-geolayer.add_child(folium.GeoJson(open("testx.geojson",
+geolayer.add_child(folium.GeoJson(open("1.geojson",
                                        ).read()))
 
 geolayer.add_child(folium.GeoJson(open("test.geojson",
