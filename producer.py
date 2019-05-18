@@ -1,10 +1,4 @@
-import requests
-import math
-import json
-import re
-import folium
-import os
-import datetime
+import requests, math, json, re, folium, os, datetime
 
 if not os.path.exists('html'):
     os.makedirs('html')
@@ -54,10 +48,3 @@ for x in range(0, endtime):
     newlon = coord[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection)) * windspeed * 60
     newlat = coord[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection)) * windspeed * 60
     coord.append([newlon, newlat])
-
-
-
-
-
-
-
