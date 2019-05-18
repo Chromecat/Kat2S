@@ -17,7 +17,7 @@
     
     <meta name="viewport" content="width=device-width,
         initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <style>#map_f8611a7d9348405392cf8e30b9858ed9 {
+    <style>#map_a0fd0b1eaeab47d996af1d295d3aae0e {
         position: relative;
         width: 100.0%;
         height: 100.0%;
@@ -28,7 +28,7 @@
 </head>
 <body>    
     
-    <div class="folium-map" id="map_f8611a7d9348405392cf8e30b9858ed9" ></div>
+    <div class="folium-map" id="map_a0fd0b1eaeab47d996af1d295d3aae0e" ></div>
 </body>
 <script>    
     
@@ -36,8 +36,8 @@
         var bounds = null;
     
 
-    var map_f8611a7d9348405392cf8e30b9858ed9 = L.map(
-        'map_f8611a7d9348405392cf8e30b9858ed9', {
+    var map_a0fd0b1eaeab47d996af1d295d3aae0e = L.map(
+        'map_a0fd0b1eaeab47d996af1d295d3aae0e', {
         center: [50.920652, 6.937008],
         zoom: 15,
         maxBounds: bounds,
@@ -49,7 +49,7 @@
 
 
     
-    var tile_layer_0d0e3c79a82d41e0a3a19dd7efc4dab2 = L.tileLayer(
+    var tile_layer_fd3a65d426e84d388542290bbe9cf711 = L.tileLayer(
         'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png',
         {
         "attribution": null,
@@ -61,25 +61,48 @@
         "opacity": 1,
         "subdomains": "abc",
         "tms": false
-}).addTo(map_f8611a7d9348405392cf8e30b9858ed9);
+}).addTo(map_a0fd0b1eaeab47d996af1d295d3aae0e);
     
-            var feature_group_dfd370adedf549baa89fc23a7d57bb3e = L.featureGroup(
-                ).addTo(map_f8611a7d9348405392cf8e30b9858ed9);
+        var marker_111d7a8a4f1e420cb5ebabf2d813be4b = L.marker(
+            [50.920652, 6.937008],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a0fd0b1eaeab47d996af1d295d3aae0e);
         
     
-        var geo_json_6cb31e3b6f6947a0a46270797ad40971 = L.geoJson(
-            {"features": [{"geometry": {"coordinates": [[6.961386718749999, 50.91861903155828], [6.963059692382813, 50.91829437228241]], "type": "LineString"}, "properties": {"highlight": {}, "style": {}}, "type": "Feature"}], "type": "FeatureCollection"},
-            {
-            }
-        ).addTo(feature_group_dfd370adedf549baa89fc23a7d57bb3e );
-        geo_json_6cb31e3b6f6947a0a46270797ad40971.setStyle(function(feature) {return feature.properties.style;});
+            var popup_ba576d08dbfd4442a24116ba1bde25b0 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_c5b4eaa71f6a4e4192fe61ee3c64165b = $(`<div id="html_c5b4eaa71f6a4e4192fe61ee3c64165b" style="width: 100.0%; height: 100.0%;">Point Zero</div>`)[0];
+                popup_ba576d08dbfd4442a24116ba1bde25b0.setContent(html_c5b4eaa71f6a4e4192fe61ee3c64165b);
+            
+
+            marker_111d7a8a4f1e420cb5ebabf2d813be4b.bindPopup(popup_ba576d08dbfd4442a24116ba1bde25b0)
+            ;
+
+            
         
     
-        var geo_json_89a03a4f29f045d9b0ec7080518f222b = L.geoJson(
-            {"features": [{"geometry": {"coordinates": [[[6.921386718749999, 50.91861903155828], [6.9330596923828125, 50.91829437228241], [6.93812370300293, 50.92273118632478]]], "type": "Polygon"}, "properties": {"highlight": {}, "style": {"color": "#ff0000", "fillOpacity": 0.7, "weight": 1}}, "type": "Feature"}], "type": "FeatureCollection"},
+            var feature_group_5ce6701488e24ec399ed1af5ed3424d6 = L.featureGroup(
+                ).addTo(map_a0fd0b1eaeab47d996af1d295d3aae0e);
+        
+    
+        var geo_json_dd7906bd56244c4688dcb28259b5181d = L.geoJson(
+            {"features": [{"geometry": {"coordinates": [[6.937008, 50.920652]], "type": "LineString"}, "properties": {"highlight": {}, "style": {}}, "type": "Feature"}], "type": "FeatureCollection"},
             {
             }
-        ).addTo(feature_group_dfd370adedf549baa89fc23a7d57bb3e );
-        geo_json_89a03a4f29f045d9b0ec7080518f222b.setStyle(function(feature) {return feature.properties.style;});
+        ).addTo(feature_group_5ce6701488e24ec399ed1af5ed3424d6 );
+        geo_json_dd7906bd56244c4688dcb28259b5181d.setStyle(function(feature) {return feature.properties.style;});
+        
+    
+        var geo_json_ae47443bfc3547a3a6c8c78b06d7c9cd = L.geoJson(
+            {"features": [{"geometry": {"coordinates": [[6.937008, 50.920652], [6.937841987859131, 50.920754400833076]], "type": "LineString"}, "properties": {"highlight": {}, "style": {}}, "type": "Feature"}], "type": "FeatureCollection"},
+            {
+            }
+        ).addTo(feature_group_5ce6701488e24ec399ed1af5ed3424d6 );
+        geo_json_ae47443bfc3547a3a6c8c78b06d7c9cd.setStyle(function(feature) {return feature.properties.style;});
         
 </script>

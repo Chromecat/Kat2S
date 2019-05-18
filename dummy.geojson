@@ -5,9 +5,8 @@
       "type": "Feature",
       "geometry": {
         "type": "LineString",
-        "coordinates": [
+        "coordinates":
 XXX
-        ]
       }
     }
   ]

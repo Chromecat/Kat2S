@@ -2,6 +2,11 @@ import requests
 import math
 import json
 import re
+import folium
+import os
+
+if not os.path.exists('html'):
+    os.makedirs('html')
 
 with open('data.config') as json_file:
     data = json.load(json_file)
@@ -9,6 +14,14 @@ with open('data.config') as json_file:
     lon = float(data["lon"])
     endtime = int(data["endtime"])
 
+maplayer = folium.Map(location=[lat, lon],
+                      tiles="Stamen Toner",
+                      zoom_start=15
+                      )
+
+geolayer = folium.FeatureGroup()
+
+folium.Marker([lat, lon], popup='Point Zero').add_to(maplayer)
 
 request = requests.get("http://api.openweathermap.org/data/2.5/weather?lat="
                  + str(lat)
@@ -19,19 +32,31 @@ request = requests.get("http://api.openweathermap.org/data/2.5/weather?lat="
 response = json.loads(request)
 
 windspeed = response["wind"]["speed"]
-winddirection = response["wind"]["deg"]
+winddirection = 7 #response["wind"]["deg"]
 
-# das unter mir alles in eine schleife die eine liste erstellt und immer +1 min
+coord = [[lon, lat]]
 
-newlat = lat + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection)) * windspeed * 60
-newlon = lon + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection)) * windspeed * 60
+for x in range(0, endtime):
+    with open('dummy.geojson') as file:
+        data = file.read()
+        data = re.sub("XXX", str(coord), data)
 
-# hier einen string erstellen die die liste in das json format überträgt und dann unter ersetzen 
+    with open('temp.geojson', 'w') as save:
+        save.write(data)
 
-with open('dummy.geojson') as file:
-    data = file.read()
-    data = re.sub("XXX", "["+str(lat)+","+str(lon)+"],["+str(newlat)+","+str(newlon)+"]", data)
+    geolayer.add_child(folium.GeoJson(open("temp.geojson",
+                                           ).read()))
 
-with open('1.geojson', 'w') as save:
-    save.write(data)
+    geolayer.add_to(maplayer)
+
+    maplayer.save('./html/' + str(x) + '.html')
+    newlon = coord[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection)) * windspeed * 60
+    newlat = coord[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection)) * windspeed * 60
+    coord.append([newlon, newlat])
+
+
+
+
+
+
 
