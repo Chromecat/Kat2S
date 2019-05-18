@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5a6c9ca-5e31-4538-8cd3-35a22bf3daca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dummypolygon.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.config" beforeDir="false" afterPath="$PROJECT_DIR$/data.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/0.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/7.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/8.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/9.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dummy.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/dummyline.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/junk/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/junk/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/junk/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/junk/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/temp.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.geojson" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,26 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/producer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data.config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="37" selection-start-column="37" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/junk/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="255">
+              <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -69,18 +56,25 @@
         <option value="$PROJECT_DIR$/weather.py" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/test.geojson" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/1.geojson" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/temp.geojson" />
         <option value="$PROJECT_DIR$/dummy.geojson" />
         <option value="$PROJECT_DIR$/testx.geojson" />
         <option value="$PROJECT_DIR$/data.config" />
+        <option value="$PROJECT_DIR$/junk/test.geojson" />
+        <option value="$PROJECT_DIR$/junk/circle.geojson" />
+        <option value="$PROJECT_DIR$/junk/main.py" />
+        <option value="$PROJECT_DIR$/junk/test.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/circle.geojson" />
+        <option value="$PROJECT_DIR$/dummypolygon.geojson" />
         <option value="$PROJECT_DIR$/producer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="646" />
     <option name="width" value="634" />
     <option name="height" value="800" />
   </component>
@@ -92,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,11 +94,15 @@
               <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -113,6 +112,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/junk" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,12 +247,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11596505" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23034154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.360274" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.360274" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,10 +288,19 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/producer.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Heatmap.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Heatmap.html" />
     <entry file="file://$PROJECT_DIR$/data.txt" />
     <entry file="file://$USER_HOME$/PycharmProjects/webscrapper/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -302,16 +311,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weather.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/weather.py" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -323,30 +323,6 @@
     <entry file="file://$PROJECT_DIR$/html/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junk/testx.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junk/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/junk/test.html">
@@ -361,34 +337,19 @@
         <state relative-caret-position="-628" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1.geojson">
+    <entry file="file://$PROJECT_DIR$/1.geojson" />
+    <entry file="file://$PROJECT_DIR$/data.json" />
+    <entry file="file://$PROJECT_DIR$/junk/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        <state relative-caret-position="165">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junk/test.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dummy.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/data.config">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -396,17 +357,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/circle.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polygoncircle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/junk/test.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junk/testx.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dummypolygon.geojson">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junk/test.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dummyline.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/producer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="255">
+          <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
         </state>
       </provider>
     </entry>

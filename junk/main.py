@@ -17,8 +17,7 @@ maplayer = folium.Map(location=[lat, lon],
 
 geolayer = folium.FeatureGroup()
 
-geolayer.add_child(folium.GeoJson(open("testx.geojson",
-                                       ).read()))
+geolayer.add_child(folium.GeoJson(open("./junk/circle.geojson").read()))
 
 #geolayer.add_child(folium.GeoJson(open("test.geojson",
 #                                       ).read()))
