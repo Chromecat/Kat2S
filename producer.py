@@ -4,6 +4,7 @@ import json
 import re
 import folium
 import os
+import datetime
 
 if not os.path.exists('html'):
     os.makedirs('html')
@@ -21,7 +22,7 @@ maplayer = folium.Map(location=[lat, lon],
 
 geolayer = folium.FeatureGroup()
 
-folium.Marker([lat, lon], popup='Point Zero').add_to(maplayer)
+folium.Marker([lat, lon], popup='starting point at ' + str(datetime.datetime.now().time())).add_to(maplayer)
 
 request = requests.get("http://api.openweathermap.org/data/2.5/weather?lat="
                  + str(lat)
