@@ -2,26 +2,17 @@ import webbrowser
 
 import folium
 from tkinter import *
+from selenium import webdriver
+import imageio
+import os
+
+from myGifGui import opengif
 
 
 # Map with layer
 
 lat = 50.920652  # Breitengrad vgl Äquator
 lon = 6.937008  # Längengrad vgl Greenwich
-
-maplayer = folium.Map(location=[lat, lon],
-                      tiles="Stamen Toner",
-                      zoom_start=15
-                      )
-
-geolayer = folium.FeatureGroup()
-
-geolayer.add_child(folium.GeoJson(open("test.geojson",
-                                       ).read()))
-geolayer.add_to(maplayer)
-
-maplayer.save('test.html')
-
 
 # GUIFunctions
 
@@ -31,10 +22,72 @@ maplayer.save('test.html')
 boolean = False
 
 
-def createmap():
+def generateimage():
+    images = []
+    filenames = []
+    browser = webdriver.Chrome(executable_path="chromedriver.exe")
+    print(os.getcwd())
+    browser.get('file:///' + os.getcwd() + './html/0.html')
+    browser.save_screenshot("screenshot0.png")
+    filenames.append('screenshot0.png')
+    browser.get('file:///' + os.getcwd() + './html/1.html')
+    browser.save_screenshot("screenshot1.png")
+    filenames.append('screenshot1.png')
+    browser.get('file:///' + os.getcwd() + './html/2.html')
+    browser.save_screenshot("screenshot2.png")
+    filenames.append('screenshot2.png')
+    browser.get('file:///' + os.getcwd() + './html/3.html')
+    browser.save_screenshot("screenshot3.png")
+    filenames.append('screenshot3.png')
+
+    for filename in filenames:
+        images.append(imageio.imread(filename))
+    imageio.mimsave('animation.gif', images, duration=3)
+
+    browser.close()
+
+    window.destroy()
+
+    try:
+        opengif("animation.gif", 4)
+    except:
+        print("We know about this exception - Gif-GUI closed")
+
+
+def createmaps():
     if entryLon.get() and entryLat.get() and entryMenge.get() and entryBar.get():
+
+        maplayer = folium.Map(location=[lat, lon],
+                              tiles="Stamen Toner",
+                              zoom_start=15
+                              )
+
+        geolayer = folium.FeatureGroup()
+
+        geolayer.add_child(folium.GeoJson(open("test.geojson",
+                                               ).read()))
+        geolayer.add_to(maplayer)
+
+        maplayer.save('test.html')
+
+        maplayer2 = folium.Map(location=[lat, lon],
+                               tiles="Stamen Toner",
+                               zoom_start=15
+                               )
+
+        geolayer2 = folium.FeatureGroup()
+
+        geolayer2.add_child(folium.GeoJson(open("test2.geojson",
+                                                ).read()))
+
+        geolayer2.add_to(maplayer2)
+
+        maplayer2.save('test2.html')
+
         webbrowser.open('test.html')
-        window.destroy()
+        webbrowser.open('test2.html')
+
+        # window.destroy()
     else:
         if not boolean:
             showwarning()
@@ -68,8 +121,8 @@ separator.pack(fill=X, padx=5, pady=10)
 row3 = Frame(window)
 labelStoff = Label(row3, width=15, anchor='w', text="Stoff*", font=("Helvetica", 13))
 choiceValue = StringVar(window)
-choices = ['one', 'two', 'three']
-choiceValue.set('one')
+choices = ['Ammoniak', 'Chlor', 'Isopropylglycolacetat', 'Salzsäure', 'Blausäure']
+choiceValue.set('Ammoniak')
 w = OptionMenu(row3, choiceValue, *choices)
 row3.pack(side=TOP, fill=X, padx=5, pady=5)
 labelStoff.pack(side=LEFT)
@@ -106,7 +159,10 @@ def showwarning():
     labelwarning.pack(side=LEFT)
 
 
-button = Button(window, text='Create Map', command=createmap)
+button = Button(window, text='Create Maps', command=createmaps)
 button.pack(side=LEFT, padx=5, pady=5)
+
+buttonTest = Button(window, text='MakeImageAndGIFOfHTML', command=generateimage)
+buttonTest.pack(side=RIGHT, padx=5, pady=5)
 
 mainloop()
