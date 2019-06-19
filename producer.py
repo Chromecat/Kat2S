@@ -1,4 +1,4 @@
-import requests, math, json, re, folium, os, datetime, random, shutil, functions
+import requests, math, json, re, folium, os, datetime, shutil, functions
 
 if os.path.exists('html'):  # erstellen des subfolders html
     shutil.rmtree('html')
@@ -46,14 +46,11 @@ polygon4 = [[lon, lat]]
 steps = 1
 
 for x in range(0, endtime):  # mainloop für minuten bis endtime
-    print(polygon1)
-    print()
-
-    functions.creategeojson(coordcorepoint, 'dummyline.geojson')
-    functions.creategeojson(polygon1, 'dummypolygonred.geojson')
-    functions.creategeojson(polygon2, 'dummypolygonred.geojson')
-    functions.creategeojson(polygon3, 'dummypolygonyellow.geojson')
-    functions.creategeojson(polygon4, 'dummypolygonyellow.geojson')
+    functions.creategeojson(coordcorepoint, './geojson/dummyline.geojson')
+    functions.creategeojson(polygon1, './geojson/dummypolygonred.geojson')
+    functions.creategeojson(polygon2, './geojson/dummypolygonred.geojson')
+    functions.creategeojson(polygon3, './geojson/dummypolygonyellow.geojson')
+    functions.creategeojson(polygon4, './geojson/dummypolygonyellow.geojson')
 
     functions.addlayer(polygon3, polygonlayer, maplayer)  # erst 3 und 4 aufgrund der überlagerung
     functions.addlayer(polygon4, polygonlayer, maplayer)
@@ -66,10 +63,12 @@ for x in range(0, endtime):  # mainloop für minuten bis endtime
     functions.newpointcore(coordcorepoint, x, windspeed, winddirection, steps)  # neuer core point
 
     distance = functions.distancepoints(coordcorepoint[0][0], coordcorepoint[0][1], coordcorepoint[1][0], coordcorepoint[1][1])
-    red = functions.createangle(10, distance)   # (0.05 * (math.log1p(5 * (x+1))))
-    yellow = functions.createangle(60, distance)  # 0.5 * (math.log1p(5 * (x+1))))
+    yellow = functions.createangle(10, distance)   # (0.05 * (math.log1p(5 * (x+1))))
+    red = functions.createangle(30, distance)  # 0.5 * (math.log1p(5 * (x+1))))
 
     functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, yellow, polygon1, polygon2, steps)  # red
     functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, red, polygon3, polygon4, steps)  # yellow
 
 shutil.rmtree('temp')  # remove temp files
+
+print(coordcorepoint)

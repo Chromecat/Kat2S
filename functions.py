@@ -27,10 +27,10 @@ def newpointcore(point, x, windspeed, winddirection, steps):  # erstellen der co
 
 def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, target2, steps):  # erstellen der polygone
     newpointlon1 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection + degreesplit)) \
-             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60) * math.cos(lenghtcorrection(degreesplit))
-
+             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
+    print(math.cos(math.radians(winddirection+degreesplit)))
     newpointlat1 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection + degreesplit)) \
-             * (windspeed * steps * 60) * math.sin(lenghtcorrection(degreesplit))
+             * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
     if x >= 1:
         del target1[-1]
     target1.append([newpointlon1, newpointlat1])
@@ -39,10 +39,10 @@ def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, targe
     # für das gespiegelte polygon
 
     newpointlon2 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection - degreesplit)) \
-            / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60) * math.cos(lenghtcorrection(degreesplit))
+            / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
 
     newpointlat2 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection - degreesplit)) \
-                  * (windspeed * steps * 60) * math.sin(lenghtcorrection(degreesplit))
+                  * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
     if x >= 1:
         del target2[-1]
     target2.append([newpointlon2, newpointlat2])
