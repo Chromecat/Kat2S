@@ -1,7 +1,9 @@
-import requests, math, json, re, folium, os, datetime, random, shutil
+import requests, math, json, re, folium, os, datetime, random, shutil, functions
 
-if not os.path.exists('html'):  # erstellen des subfolders html
-    os.makedirs('html')
+if os.path.exists('html'):  # erstellen des subfolders html
+    shutil.rmtree('html')
+
+os.makedirs('html')
 
 if not os.path.exists('temp'):  # erstellen des subfolder temp
     os.makedirs('temp')
@@ -14,11 +16,11 @@ with open('data.config') as json_file:  # lesen der config datei lat, lon, endti
 
 maplayer = folium.Map(location=[lat, lon],  #create map
                       tiles="Stamen Toner",
-                      zoom_start=15
+                      zoom_start=17
                       )
 
 corepointlayer = folium.FeatureGroup()  # erstellen des corepoint layers
-polygonlayer1 = folium.FeatureGroup()  # erstellen des polygonlayers
+polygonlayer = folium.FeatureGroup()  # erstellen des polygonlayers
 
 folium.Marker([lat, lon], popup='starting point at ' + str(datetime.datetime.now().time())).add_to(maplayer)  # start punkt
 
@@ -30,58 +32,44 @@ request = requests.get("http://api.openweathermap.org/data/2.5/weather?lat="  # 
 
 response = json.loads(request)
 
-windspeed = response["wind"]["speed"]
-winddirection = 7 #response["wind"]["deg"]
+windspeed = 1  # response["wind"]["speed"]
+winddirection = 0  # response["wind"]["deg"]
+
+print(response)
 
 coordcorepoint = [[lon, lat]]  # erstellen der liste coordcorepoint
 polygon1 = [[lon, lat]]
+polygon2 = [[lon, lat]]
+polygon3 = [[lon, lat]]
+polygon4 = [[lon, lat]]
 
-degreesplit = 20  # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+steps = 1
 
 for x in range(0, endtime):  # mainloop für minuten bis endtime
-    with open('dummyline.geojson') as file:  # öffnen des dummy geojson
-        data = file.read()
-        data = re.sub("XXX", str(coordcorepoint), data)  # ersetzen der XXX durch die coordinaten in die geojson
+    print(polygon1)
+    print()
 
-    with open('./temp/pointtemp.geojson', 'w') as save:
-        save.write(data)
+    functions.creategeojson(coordcorepoint, 'dummyline.geojson')
+    functions.creategeojson(polygon1, 'dummypolygonred.geojson')
+    functions.creategeojson(polygon2, 'dummypolygonred.geojson')
+    functions.creategeojson(polygon3, 'dummypolygonyellow.geojson')
+    functions.creategeojson(polygon4, 'dummypolygonyellow.geojson')
 
-    with open('dummypolygon.geojson') as file:  # öffnen des dummy geojson
-        data1 = file.read()
-        data1 = re.sub("XXX", str(polygon1), data1)  # ersetzen der XXX durch die coordinaten in die geojson
+    functions.addlayer(polygon3, polygonlayer, maplayer)  # erst 3 und 4 aufgrund der überlagerung
+    functions.addlayer(polygon4, polygonlayer, maplayer)
+    functions.addlayer(polygon1, polygonlayer, maplayer)
+    functions.addlayer(polygon2, polygonlayer, maplayer)
+    functions.addlayer(coordcorepoint, corepointlayer, maplayer)
 
-    with open('./temp/poly1temp.geojson', 'w') as save:
-            save.write(data1)
+    maplayer.save('./html/' + str(x * steps) + '.html')
 
-    corepointlayer.add_child(folium.GeoJson(open("./temp/pointtemp.geojson",
-                                                 ).read()))
-    corepointlayer.add_to(maplayer)
-    polygonlayer1.add_child(folium.GeoJson(open("./temp/poly1temp.geojson",
-                                                ).read()))
-    polygonlayer1.add_to(maplayer)
+    functions.newpointcore(coordcorepoint, x, windspeed, winddirection, steps)  # neuer core point
 
-    maplayer.save('./html/' + str(x) + '.html')
+    distance = functions.distancepoints(coordcorepoint[0][0], coordcorepoint[0][1], coordcorepoint[1][0], coordcorepoint[1][1])
+    red = functions.createangle(10, distance)   # (0.05 * (math.log1p(5 * (x+1))))
+    yellow = functions.createangle(60, distance)  # 0.5 * (math.log1p(5 * (x+1))))
 
-    newlon = coordcorepoint[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection)) \
-             / math.cos(lat * math.pi/180) * windspeed * 60
-    newlat = coordcorepoint[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection)) \
-             * windspeed * 60
-    coordcorepoint.append([newlon, newlat])
-
-    # das der letzte punkt immer bei der anderen liste hinzugefügt wird
-
-    newpointlon = coordcorepoint[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection + degreesplit)) \
-             / math.cos(lat * math.pi/180) * (windspeed * 60)  # windspeed * 60 = länge
-    newpointlat = coordcorepoint[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection + degreesplit)) \
-             * (windspeed * 60)
-    polygon1.append([newpointlon, newpointlat])
-    degreesplit += (random.random()*20)-10  # random wert durch formel ersetzen
+    functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, yellow, polygon1, polygon2, steps)  # red
+    functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, red, polygon3, polygon4, steps)  # yellow
 
 shutil.rmtree('temp')  # remove temp files
-
-
-# es fehlt berechnung der spreizung durch die addition auf den windrichtungs grad.. und die korrektur der länge um
-# rechtwinklig zu bleiben.
-
-# punkt1 durch die ausbreitung berechnen.. verschieben.
-
