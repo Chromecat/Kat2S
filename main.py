@@ -48,18 +48,34 @@ def create_gif():
         images = []
         filenames = []
         browser = webdriver.Chrome(executable_path="chromedriver.exe")
-        browser.get('file:///' + os.getcwd() + './html/0.html')
-        browser.save_screenshot("screenshot0.png")
-        filenames.append('screenshot0.png')
-        browser.get('file:///' + os.getcwd() + './html/10.html')
-        browser.save_screenshot("screenshot1.png")
-        filenames.append('screenshot1.png')
-        browser.get('file:///' + os.getcwd() + './html/20.html')
-        browser.save_screenshot("screenshot2.png")
-        filenames.append('screenshot2.png')
-        browser.get('file:///' + os.getcwd() + './html/30.html')
-        browser.save_screenshot("screenshot3.png")
-        filenames.append('screenshot3.png')
+        rootpath = os.getcwd() + '/html'
+        counter = 0
+        numberhtml = 0
+
+        # Number of Files in Dir
+        length = len(os.listdir(rootpath))
+
+        while counter < length:
+            print('testo')
+            browser.get(rootpath + '/' + str(numberhtml) + '.html')
+            browser.save_screenshot('screenshots/screenshot' + str(counter) + '.png')
+            filenames.append('screenshots/screenshot' + str(counter) + '.png')
+            print('Filesname:' + str(len(filenames)))
+            counter = counter + 1
+            numberhtml = numberhtml + 10
+
+        # browser.get('file:///' + os.getcwd() + '/html/0.html')
+        # browser.save_screenshot("screenshots/screenshot0.png")
+        # filenames.append('screenshots/screenshot0.png')
+        # browser.get('file:///' + os.getcwd() + '/html/10.html')
+        # browser.save_screenshot("screenshots/screenshot1.png")
+        # filenames.append('screenshots/screenshot1.png')
+        # browser.get('file:///' + os.getcwd() + '/html/20.html')
+        # browser.save_screenshot("screenshots/screenshot2.png")
+        # filenames.append('screenshots/screenshot2.png')
+        # browser.get('file:///' + os.getcwd() + '/html/30.html')
+        # browser.save_screenshot("screenshots/screenshot3.png")
+        # filenames.append('screenshots/screenshot3.png')
 
         for filename in filenames:
             images.append(imageio.imread(filename))
@@ -70,7 +86,7 @@ def create_gif():
         window.destroy()
 
         try:
-            opengif("animation.gif", 4)
+            opengif("animation.gif", len(images))
         except:
             print("We know about this exception - GIF-GUI closed")
 
