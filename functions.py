@@ -19,6 +19,7 @@ def addlayer(point, layer, maplayer):  # erstelltes geojson zur karte hinzufüge
 def newpointcore(point, x, windspeed, winddirection, steps):  # erstellen der corelinie
     newlon = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection)) \
              / math.cos(point[x][1] * math.pi / 180) * windspeed * steps * 60
+
     newlat = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection)) \
              * windspeed * steps * 60
     point.append([newlon, newlat])
@@ -26,27 +27,36 @@ def newpointcore(point, x, windspeed, winddirection, steps):  # erstellen der co
 
 def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, target2, steps):  # erstellen der polygone
     newpointlon1 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection + degreesplit)) \
-             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60) * lenghtcorrection(degreesplit)
+             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
+    print(math.cos(math.radians(winddirection+degreesplit)))
     newpointlat1 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection + degreesplit)) \
-             * (windspeed * steps * 60) * lenghtcorrection(degreesplit)
+             * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
     if x >= 1:
         del target1[-1]
     target1.append([newpointlon1, newpointlat1])
     target1.append([point[x+1][0], point[x+1][1]])
 
+    # für das gespiegelte polygon
+
     newpointlon2 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection - degreesplit)) \
-                  / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60) * lenghtcorrection(degreesplit)
+            / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
+
     newpointlat2 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection - degreesplit)) \
-                  * (windspeed * steps * 60) * lenghtcorrection(degreesplit)
+                  * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
     if x >= 1:
         del target2[-1]
     target2.append([newpointlon2, newpointlat2])
     target2.append([point[x+1][0], point[x+1][1]])
 
 
-def createangle(input):
-    return math.degrees(math.asin(input/math.sqrt((input * input) + 1)))
+def createangle(input, distance):
+    return math.degrees(math.asin(input/math.sqrt((input * input) + (distance * distance))))
 
 
 def lenghtcorrection(alpha):
     return 1/math.sin(math.radians(90 - alpha))
+
+
+def distancepoints(x1, y1, x2, y2):
+    return 6137000 * math.acos(math.sin(math.radians(y1)) * math.sin(math.radians(y2)) + math.cos(math.radians(y1))
+                    * math.cos(math.radians(y2)) * math.cos(math.radians(x2 - x1)))
