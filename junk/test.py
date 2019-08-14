@@ -2,8 +2,6 @@ def addtimestamp(name, time):
 
     from PIL import Image, ImageDraw, ImageFont
 
-    time = time
-
     image = Image.open(str(name) + '.png')
 
     draw = ImageDraw.Draw(image)

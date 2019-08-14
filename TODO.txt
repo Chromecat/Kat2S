@@ -4,6 +4,8 @@ producer:
 
     2. Zoomfaktor +1 = verdopplung
 
+    3. Steps convertierung
+
 functions:
 
     1. Längenkorrektur
