@@ -1,8 +1,8 @@
-def addtimestamp(name):
+def addtimestamp(name, time):
 
     from PIL import Image, ImageDraw, ImageFont
 
-    time = 90
+    time = time
 
     image = Image.open(str(name) + '.png')
 
