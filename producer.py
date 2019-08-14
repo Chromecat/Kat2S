@@ -1,6 +1,6 @@
 def generatehtml():
 
-    import requests, json, folium, os, datetime, shutil, functions
+    import requests, json, folium, os, datetime, shutil, functions, math
 
     if os.path.exists('html'):  # erstellen des subfolders html
         shutil.rmtree('html')
@@ -34,10 +34,12 @@ def generatehtml():
 
     response = json.loads(request)
 
-    windspeed = 1  # response["wind"]["speed"]
-    winddirection = 0  # response["wind"]["deg"]
+    windspeed = response["wind"]["speed"]
+    winddirection = response["wind"]["deg"]  # bei Fehler -> fehler in der API bei 0 deg
 
     print(response)
+
+    # Vorbereitungsende
 
     coordcorepoint = [[lon, lat]]  # erstellen der liste coordcorepoint
     polygon1 = [[lon, lat]]
@@ -65,8 +67,8 @@ def generatehtml():
         functions.newpointcore(coordcorepoint, x, windspeed, winddirection, steps)  # neuer core point
 
         distance = functions.distancepoints(coordcorepoint[0][0], coordcorepoint[0][1], coordcorepoint[1][0], coordcorepoint[1][1])
-        yellow = functions.createangle(10, distance)   # (0.05 * (math.log1p(5 * (x+1))))
-        red = functions.createangle(30, distance)  # 0.5 * (math.log1p(5 * (x+1))))
+        yellow = functions.createangle((5 * (math.log1p(5 * (x+1)))), distance)
+        red = functions.createangle((50 * (math.log1p(5 * (x+1)))), distance) 
 
         functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, yellow, polygon1, polygon2, steps)  # red
         functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, red, polygon3, polygon4, steps)  # yellow
