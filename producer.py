@@ -35,7 +35,12 @@ def generatehtml():
     response = json.loads(request)
 
     windspeed = response["wind"]["speed"]
-    winddirection = response["wind"]["deg"]  # bei Fehler -> fehler in der API bei 0 deg
+
+    try:
+        winddirection = response["wind"]["deg"]
+    except KeyError:
+        winddirection = 0
+
 
     print(response)
 

@@ -2,9 +2,7 @@ producer:
 
     1.Formel einbinden Ausbreitung
 
-    2. Zoomfaktor
-
-    3. API error handling
+    2. Zoomfaktor +1 = verdopplung
 
 functions:
 

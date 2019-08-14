@@ -1,14 +1,18 @@
+def addtimestamp(name):
 
-from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image, ImageDraw, ImageFont
 
-image = Image.open('CivilDefence.png')
+    time = 90
 
-draw = ImageDraw.Draw(image)
+    image = Image.open(str(name) + '.png')
 
-font = ImageFont.truetype('Arial.ttf', size=45)
+    draw = ImageDraw.Draw(image)
 
-(x, y) = (100, 50)
-message = "TEST"
-color = 'rgb(255, 0, 0)'
-draw.text((x, y), message, fill=color, font=font)
-image.save('test.png')
+    font = ImageFont.truetype('Arial.ttf', size=45)
+
+    (x, y) = (100, 50)
+    message = str(time)
+    color = 'rgb(255, 0, 0)'
+    draw.text((x, y), message, fill=color, font=font)
+    image.save(str(name) + '.png')
+
