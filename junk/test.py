@@ -15,4 +15,3 @@ def addtimestamp(name):
     color = 'rgb(255, 0, 0)'
     draw.text((x, y), message, fill=color, font=font)
     image.save(str(name) + '.png')
-
