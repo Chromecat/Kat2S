@@ -2,27 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5a6c9ca-5e31-4538-8cd3-35a22bf3daca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/menu_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animation.gif" beforeDir="false" afterPath="$PROJECT_DIR$/animation.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.config" beforeDir="false" afterPath="$PROJECT_DIR$/data.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummyline.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/geojson/dummyline.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummypolygon.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/geojson/dummypolygon.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummypolygonred.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/geojson/dummypolygonred.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummypolygonyellow.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/geojson/dummypolygonyellow.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gifGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gif_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/0.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/20.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/30.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/40.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/50.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/60.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/70.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/80.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/90.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/7.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/8.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/9.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/9.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGifGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gifGui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/Thumbs.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/screenshot0.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/screenshot0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/screenshot1.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/screenshot1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenshots/screenshot2.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/screenshot2.png" afterDir="false" />
@@ -42,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="96" column="13" lean-forward="true" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+            <state relative-caret-position="370">
+              <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -54,32 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data.config">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/producer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-606">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gifGui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="44" selection-start-column="44" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -115,6 +90,14 @@
       <find>gifg</find>
       <find>bitte</find>
       <find>pad</find>
+      <find>command</find>
+      <find>opengif</find>
+      <find>exitapp</find>
+      <find>menge</find>
+      <find>data</find>
+      <find>conf</find>
+      <find>and</find>
+      <find>boolean</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,11 +121,15 @@
         <option value="$PROJECT_DIR$/functions.py" />
         <option value="$PROJECT_DIR$/producer.py" />
         <option value="$PROJECT_DIR$/myGifGui.py" />
+        <option value="$PROJECT_DIR$/menu_logic.py" />
+        <option value="$PROJECT_DIR$/menu.py" />
+        <option value="$PROJECT_DIR$/gif_gui.py" />
+        <option value="$PROJECT_DIR$/menu_functions.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="550" />
     <option name="y" value="15" />
     <option name="width" value="1085" />
@@ -162,21 +149,6 @@
             <path>
               <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
-              <item name="geojson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kat2S" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kat2S" type="462c0819:PsiDirectoryNode" />
-              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,7 +266,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="menu_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Kat2S" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -306,7 +278,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Marvin\Desktop\Uni_Master\Mehrdimensionale_Daten\Kat2S\pythonScripts\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/menu_functions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -327,7 +299,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Marvin\Desktop\Uni_Master\Mehrdimensionale_Daten\Kat2S\gifGui.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Marvin\Desktop\Uni_Master\Mehrdimensionale_Daten\Kat2S\gif_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -360,19 +332,19 @@
     <list>
       <item itemvalue="Python.main (4)" />
       <item itemvalue="Python.main (3)" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.createNewTask" />
       <item itemvalue="Python.producer (1)" />
       <item itemvalue="Python.main (5)" />
       <item itemvalue="Python.myGifGui" />
+      <item itemvalue="Python.menu_functions" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (5)" />
+        <item itemvalue="Python.menu_functions" />
         <item itemvalue="Python.myGifGui" />
         <item itemvalue="Python.producer (1)" />
         <item itemvalue="Python.createNewTask" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -402,12 +374,12 @@
     <frame x="-7" y="-7" width="1550" height="840" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13606341" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13606341" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32863188" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49867898" visible="true" weight="0.33850494" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49867898" visible="true" weight="0.33850494" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,7 +394,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/screenshot2.png" />
     <entry file="file://$PROJECT_DIR$/animation.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -449,13 +420,6 @@
     <entry file="file://$PROJECT_DIR$/venv/main.py" />
     <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/screenshot3.png" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-973505105/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="289" column="4" selection-start-line="289" selection-start-column="4" selection-end-line="289" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/40.html" />
     <entry file="file://$PROJECT_DIR$/html/20.html" />
     <entry file="file://$PROJECT_DIR$/geojson/dummypolygonyellow.geojson">
@@ -476,13 +440,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/90.html" />
-    <entry file="file://$PROJECT_DIR$/data.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="52" selection-start-column="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/190156192.geojson" />
     <entry file="file://$PROJECT_DIR$/html/30.html" />
     <entry file="file://$PROJECT_DIR$/geojson/dummyline.geojson">
@@ -505,20 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="1211" column="8" selection-start-line="1211" selection-start-column="8" selection-end-line="1211" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -576,21 +519,8 @@
     <entry file="file://$PROJECT_DIR$/screenshots/screenshot5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/screenshots/screenshot3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/screenshots/screenshot2.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gifGui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/weather.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -601,27 +531,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.py">
+    <entry file="file://$PROJECT_DIR$/screenshots/screenshot3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-973505105/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="148">
+          <caret line="352" column="4" selection-start-line="352" selection-start-column="4" selection-end-line="352" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/producer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-606">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="138">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gif_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
+          <folding>
+            <element signature="e#137#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="2679" column="8" selection-start-line="2679" selection-start-column="8" selection-end-line="2679" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="96" column="13" lean-forward="true" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+        <state relative-caret-position="370">
+          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
         </state>
       </provider>
     </entry>
