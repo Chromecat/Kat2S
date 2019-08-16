@@ -10,7 +10,6 @@ import producer
 from gif_gui import opengif
 from geopy.geocoders import Nominatim
 
-from menu_functions import exitapp, opendialog
 
 boolean = False
 
@@ -58,34 +57,36 @@ def create_json_config_file():
         "materialChoice": materialChoice,
         "density": density,
         "bar": bar,
-        "steps": steps,
-        "endtime": 10,
+        "endtime": endtime,
+        "steps": steps
     }
+
     with open('data.config', 'w') as outfile:
         json.dump(content, outfile)
 
 
 def set_textfield_inputs():
     global materialChoice
-    materialChoice = choiceValue.get()
     global bar
-    bar = entryBar.get()
     global steps
-    steps = entrySteps.get()
     global endtime
+    materialChoice = choiceValue.get()
+    bar = entryBar.get()
+    steps = entrySteps.get()
     endtime = entryEndtime.get()
 
 
 def create_gif():
-    if entryAddress.get() and entryBar.get() and entryEndtime.get() and entrySteps.get():
+    if entryAddress.get() and int(entryBar.get()) and int(entryEndtime.get()) and int(entrySteps.get()):
 
         create_json_config_file()
+        window.destroy()
         producer.generatehtml()
         images = []
         filenames = []
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
-        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--window-size=820,380")
         browser = webdriver.Chrome(options=options)
         rootpath = os.getcwd() + '/html'
         counter = 0
@@ -96,11 +97,12 @@ def create_gif():
 
         while counter < length:
             browser.get(rootpath + '/' + str(numberhtml) + '.html')
-            browser.save_screenshot('screenshots/screenshot' + str(counter) + '.png')
-            filenames.append('screenshots/screenshot' + str(counter) + '.png')
+            browser.save_screenshot('screenshots/screenshot' + str(numberhtml) + '.png')
+            addtimestamp('screenshots/screenshot' + str(numberhtml) + '.png', numberhtml)
+            filenames.append('screenshots/screenshot' + str(numberhtml) + '.png')
             print('Filesname:' + str(len(filenames)))
             counter = counter + 1
-            numberhtml = numberhtml + 1
+            numberhtml = numberhtml + int(steps)
 
         for filename in filenames:
             images.append(imageio.imread(filename))
@@ -108,11 +110,9 @@ def create_gif():
 
         browser.close()
 
-        window.destroy()
-
         try:
             opengif("animation.gif", len(images))
-        except:
+        except :
             print("We know about this exception - GIF-GUI closed")
 
     else:
@@ -120,12 +120,23 @@ def create_gif():
             show_warning()
 
 
-def exitapplication():
-    exitapp(window)
+def addtimestamp(name, time):
 
+    from PIL import Image, ImageDraw, ImageFont
 
-def openfiledialog():
-    opendialog(window)
+    time = time
+
+    image = Image.open(name)
+
+    draw = ImageDraw.Draw(image)
+
+    font = ImageFont.truetype('arial.ttf', size=45)
+
+    (x, y) = (100, 50)
+    message = str(time)
+    color = 'rgb(255, 0, 0)'
+    draw.text((x, y), message, fill=color, font=font)
+    image.save(name)
 
 
 # GUI
@@ -133,14 +144,6 @@ def openfiledialog():
 window = Tk()
 window.resizable(width=False, height=False)
 window.title("Kat2S")
-menubar = Menu(window, bg="#20232A")
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Open", command=openfiledialog)
-filemenu.add_separator()
-filemenu.add_command(label="Exit", command=exitapplication)
-menubar.add_cascade(label="File", menu=filemenu)
-# menubar.add_command(label="Test")
-window.config(menu=menubar)
 
 container1 = Frame(window)
 container1.pack(side=LEFT)
@@ -203,8 +206,8 @@ buttonTest.pack(side=RIGHT, padx=5, pady=5)
 
 container2 = Frame(window)
 container2.pack(side=RIGHT, padx=(15, 0))
-img = Image.open('rauch.jpg')
-newImg = img.resize((180, 260), Image.ANTIALIAS)
+img = Image.open('CivilDefence.png')
+newImg = img.resize((180, 180), Image.ANTIALIAS)
 newImg = ImageTk.PhotoImage(newImg)
 panel = Label(container2, image=newImg)
 panel.pack(side=RIGHT)
