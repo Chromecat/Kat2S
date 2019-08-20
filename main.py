@@ -5,8 +5,10 @@ from PIL import ImageTk, Image
 from selenium import webdriver
 import imageio
 import os
+import shutil
 
 import producer
+from file_gui import openfilegui
 from gif_gui import opengif
 from geopy.geocoders import Nominatim
 
@@ -72,8 +74,8 @@ def set_textfield_inputs():
     global endtime
     materialChoice = choiceValue.get()
     bar = entryBar.get()
-    steps = entrySteps.get()
     endtime = entryEndtime.get()
+    steps = entrySteps.get()
 
 
 def create_gif():
@@ -82,6 +84,7 @@ def create_gif():
         create_json_config_file()
         window.destroy()
         producer.generatehtml()
+        checkforscreenshotsdir()
         images = []
         filenames = []
         options = webdriver.ChromeOptions()
@@ -108,12 +111,7 @@ def create_gif():
             images.append(imageio.imread(filename))
         imageio.mimsave('animation.gif', images, duration=3)
 
-        browser.close()
-
-        try:
-            opengif("animation.gif", len(images))
-        except :
-            print("We know about this exception - GIF-GUI closed")
+        openfilegui(len(images))
 
     else:
         if not boolean:
@@ -137,6 +135,13 @@ def addtimestamp(name, time):
     color = 'rgb(255, 0, 0)'
     draw.text((x, y), message, fill=color, font=font)
     image.save(name)
+
+
+def checkforscreenshotsdir():
+    if os.path.exists('screenshots'):
+        shutil.rmtree('screenshots')
+    if not os.path.exists('screenshots'):
+        os.mkdir('screenshots')
 
 
 # GUI
