@@ -1,5 +1,6 @@
 import json
 from tkinter import *
+import tkinter.font as font
 
 from PIL import ImageTk, Image
 from selenium import webdriver
@@ -19,9 +20,8 @@ latitude = ""
 longitude = ""
 materialChoice = ""
 density = ""
-bar = ""
-steps = ""
-endtime = ""
+numbersteps = ""
+timesteps = ""
 
 
 def get_lat_lon_of_address():
@@ -58,9 +58,8 @@ def create_json_config_file():
         "lon": longitude,
         "materialChoice": materialChoice,
         "density": density,
-        "bar": bar,
-        "endtime": endtime,
-        "steps": steps
+        "numbersteps": numbersteps,
+        "timesteps": timesteps
     }
 
     with open('data.config', 'w') as outfile:
@@ -69,17 +68,15 @@ def create_json_config_file():
 
 def set_textfield_inputs():
     global materialChoice
-    global bar
-    global steps
-    global endtime
+    global timesteps
+    global numbersteps
     materialChoice = choiceValue.get()
-    bar = entryBar.get()
-    endtime = entryEndtime.get()
-    steps = entrySteps.get()
+    timesteps = entryTimesteps.get()
+    numbersteps = entryNumbersteps.get()
 
 
 def create_gif():
-    if entryAddress.get() and int(entryBar.get()) and int(entryEndtime.get()) and int(entrySteps.get()):
+    if entryAddress.get() and int(entryTimesteps.get()) and int(entryNumbersteps.get()):
 
         create_json_config_file()
         window.destroy()
@@ -105,7 +102,7 @@ def create_gif():
             filenames.append('screenshots/screenshot' + str(numberhtml) + '.png')
             print('Filesname:' + str(len(filenames)))
             counter = counter + 1
-            numberhtml = numberhtml + int(steps)
+            numberhtml = numberhtml + int(timesteps)
 
         for filename in filenames:
             images.append(imageio.imread(filename))
@@ -154,7 +151,7 @@ container1 = Frame(window)
 container1.pack(side=LEFT)
 
 row1 = Frame(container1)
-labelAddress = Label(row1, width=15, anchor='w', text="Adresse*", font=("Helvetica", 13))
+labelAddress = Label(row1, width=20, anchor='w', text="Adresse*", font=("Helvetica", 13))
 entryAddress = Entry(row1)
 row1.pack(side=TOP, fill=X, padx=5, pady=5)
 labelAddress.pack(side=LEFT)
@@ -164,7 +161,7 @@ separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=10)
 
 row2 = Frame(container1)
-labelStoff = Label(row2, width=15, anchor='w', text="Stoff*", font=("Helvetica", 13))
+labelStoff = Label(row2, width=20, anchor='w', text="Stoff*", font=("Helvetica", 13))
 choiceValue = StringVar(window)
 choices = ['Ammoniak', 'Chlor']
 choiceValue.set('Ammoniak')
@@ -177,40 +174,32 @@ separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=10)
 
 row3 = Frame(container1)
-labelBar = Label(row3, width=15, anchor='w', text="Bar*", font=("Helvetica", 13))
-entryBar = Entry(row3)
+labelNumbersteps = Label(row3, width=20, anchor='w', text="Anzahl Schritte*", font=("Helvetica", 13))
+entryNumbersteps = Entry(row3)
 row3.pack(side=TOP, fill=X, padx=5, pady=5)
-labelBar.pack(side=LEFT)
-entryBar.pack(side=RIGHT, expand=YES, fill=X)
+labelNumbersteps.pack(side=LEFT)
+entryNumbersteps.pack(side=RIGHT, expand=YES, fill=X)
 
 separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=10)
 
 row4 = Frame(container1)
-labelEndtime = Label(row4, width=15, anchor='w', text="Endtime*", font=("Helvetica", 13))
-entryEndtime = Entry(row4)
+labelTimesteps = Label(row4, width=20, anchor='w', text="Zeitabstand (min)*", font=("Helvetica", 13))
+entryTimesteps = Entry(row4)
 row4.pack(side=TOP, fill=X, padx=5, pady=5)
-labelEndtime.pack(side=LEFT)
-entryEndtime.pack(side=RIGHT, expand=YES, fill=X)
+labelTimesteps.pack(side=LEFT)
+entryTimesteps.pack(side=RIGHT, expand=YES, fill=X)
 
 separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=10)
 
-row5 = Frame(container1)
-labelSteps = Label(row5, width=15, anchor='w', text="Steps*", font=("Helvetica", 13))
-entrySteps = Entry(row5)
-row5.pack(side=TOP, fill=X, padx=5, pady=5)
-labelSteps.pack(side=LEFT)
-entrySteps.pack(side=RIGHT, expand=YES, fill=X)
-
-separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
-separator.pack(fill=X, padx=5, pady=10)
-
-buttonTest = Button(container1, text='GenerateGIF', command=create_gif)
-buttonTest.pack(side=RIGHT, padx=5, pady=5)
+buttonStart = Button(container1, text='Start', padx=25, pady=5, command=create_gif)
+myFont = font.Font(family='Helvetica', size=10, weight='bold')
+buttonStart['font'] = myFont
+buttonStart.pack(side=RIGHT, padx=5, pady=(5, 10))
 
 container2 = Frame(window)
-container2.pack(side=RIGHT, padx=(15, 0))
+container2.pack(side=RIGHT, padx=(20, 20))
 img = Image.open('CivilDefence.png')
 newImg = img.resize((180, 180), Image.ANTIALIAS)
 newImg = ImageTk.PhotoImage(newImg)
