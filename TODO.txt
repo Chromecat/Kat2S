@@ -1,11 +1,12 @@
 producer:
 
-    1.Formel einbinden Ausbreitung
+    1.Formel einbinden Ausbreitung <- in functions auslagern
 
-    2. Zoomfaktor +1 = verdopplung
 
-    3. Steps convertierung
+    2. Zoomfaktor als case
 
-functions:
+General:
 
-    1. Längenkorrektur
+    1. Wiki erstellen
+
+    2. Kommentare
