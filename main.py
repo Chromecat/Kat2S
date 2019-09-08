@@ -3,6 +3,7 @@ from tkinter import *
 import tkinter.font as font
 
 from PIL import ImageTk, Image
+from PIL import Image, ImageDraw, ImageFont
 from selenium import webdriver
 import imageio
 import os
@@ -117,20 +118,18 @@ def create_gif():
 
 def addtimestamp(name, time):
 
-    from PIL import Image, ImageDraw, ImageFont
-
     time = time
 
     image = Image.open(name)
 
     draw = ImageDraw.Draw(image)
 
-    font = ImageFont.truetype('arial.ttf', size=45)
+    fontstyle = ImageFont.truetype('arial.ttf', size=45)
 
     (x, y) = (100, 50)
-    message = str(time)
+    message = str(time) + ' min'
     color = 'rgb(255, 0, 0)'
-    draw.text((x, y), message, fill=color, font=font)
+    draw.text((x, y), message, fill=color, font=fontstyle)
     image.save(name)
 
 

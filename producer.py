@@ -1,4 +1,11 @@
-import requests, json, folium, os, datetime, shutil, functions, math
+import requests
+import json
+import folium
+import os
+import datetime
+import shutil
+import functions
+import math
 
 
 def generatehtml():

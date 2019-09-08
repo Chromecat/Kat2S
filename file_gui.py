@@ -53,10 +53,19 @@ def openinbrowser():
     webbrowser.open_new_tab("animation.gif")
 
 
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+
+def natural_keys(text):
+    return [atoi(c) for c in re.split('(\d+)', text)]
+
+
 def getchoicesofscreenshots():
     mylist = []
     for filename in os.listdir("screenshots"):
         mylist.append(filename)
+    mylist.sort(key=natural_keys)
     return mylist
 
 
@@ -64,6 +73,7 @@ def getchoicesofhtmls():
     mylist = []
     for filename in os.listdir("html"):
         mylist.append(filename)
+    mylist.sort(key=natural_keys)
     return mylist
 
 
