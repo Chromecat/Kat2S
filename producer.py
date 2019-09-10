@@ -9,7 +9,6 @@ import math
 
 
 def generatehtml():
-
     if os.path.exists('html'):  # erstellen des subfolders html
         shutil.rmtree('html')
 
@@ -24,26 +23,21 @@ def generatehtml():
         lon = float(data["lon"])
         numbersteps = int(data["numbersteps"])
         timesteps = int(data["timesteps"])
-
-    maplayer = folium.Map(location=[lat, lon],  #create map
-                      tiles="Stamen Toner",
-                      zoom_start=16
-                      )
-
-    corepointlayer = folium.FeatureGroup()  # erstellen des corepoint layers
-    polygonlayer = folium.FeatureGroup()  # erstellen des polygonlayers
-
-    folium.Marker([lat, lon], popup='starting point at ' + str(datetime.datetime.now().time())).add_to(maplayer)  # start punkt
+        mol = float(data["mol"])
 
     request = requests.get("http://api.openweathermap.org/data/2.5/weather?lat="  # abfrage über die api
-                     + str(lat)
-                     + "&lon="
-                     + str(lon)
-                     + "&appid=c30853926307db7c20b1369a94023fca").text
+                           + str(lat)
+                           + "&lon="
+                           + str(lon)
+                           + "&appid=c30853926307db7c20b1369a94023fca").text
 
     response = json.loads(request)
 
     windspeed = response["wind"]["speed"]
+
+    temp = response["main"]["temp"]
+
+    pressure = response["main"]["pressure"]
 
     try:
         winddirection = response["wind"]["deg"]
@@ -51,6 +45,17 @@ def generatehtml():
         winddirection = 0
 
     print(response)
+
+    maplayer = folium.Map(location=[lat, lon],  # create map
+                          tiles="Stamen Toner",
+                          zoom_start=functions.creatzoom(windspeed, numbersteps, timesteps)
+                          )
+
+    corepointlayer = folium.FeatureGroup()  # erstellen des corepoint layers
+    polygonlayer = folium.FeatureGroup()  # erstellen des polygonlayers
+
+    folium.Marker([lat, lon], popup='starting point at ' + str(datetime.datetime.now().time())).add_to(
+        maplayer)  # start punkt
 
     # Vorbereitungsende
 
@@ -77,12 +82,15 @@ def generatehtml():
 
         functions.newpointcore(coordcorepoint, x, windspeed, winddirection, timesteps)  # neuer core point
 
-        distance = functions.distancepoints(coordcorepoint[0][0], coordcorepoint[0][1], coordcorepoint[1][0], coordcorepoint[1][1])
-        yellow = functions.createangle((5 * (math.log1p(5 * (x+1)))), distance)
-        red = functions.createangle((50 * (math.log1p(5 * (x+1)))), distance)
+        distance = functions.distancepoints(coordcorepoint[0][0], coordcorepoint[0][1], coordcorepoint[1][0],
+                                            coordcorepoint[1][1])
+        yellow = functions.createangle(functions.difusion(mol, temp, pressure, x) * 1.1, distance)
+        red = functions.createangle(functions.difusion(mol, temp, pressure, x) * 2.5, distance)
 
-        functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, yellow, polygon1, polygon2, timesteps)  # red
-        functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, red, polygon3, polygon4, timesteps)  # yellow
+        functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, yellow, polygon1, polygon2,
+                               timesteps)  # red
+        functions.newpointpoly(coordcorepoint, x, windspeed, winddirection, red, polygon3, polygon4,
+                               timesteps)  # yellow
 
     shutil.rmtree('temp')  # remove temp files
 

@@ -20,7 +20,7 @@ boolean = False
 latitude = ""
 longitude = ""
 materialChoice = ""
-density = ""
+mol = ""
 numbersteps = ""
 timesteps = ""
 
@@ -49,16 +49,16 @@ def create_json_config_file():
     set_textfield_inputs()
 
     if materialChoice == "Ammoniak":
-        global density
-        density = 0.7714
+        global mol
+        mol = 17.031
     elif materialChoice == "Chlor":
-        density = 3.215
+        mol = 35.453
 
     content = {
         "lat": latitude,
         "lon": longitude,
         "materialChoice": materialChoice,
-        "density": density,
+        "mol": mol,
         "numbersteps": numbersteps,
         "timesteps": timesteps
     }
@@ -87,7 +87,7 @@ def create_gif():
         filenames = []
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
-        options.add_argument("--window-size=820,380")
+        options.add_argument("--window-size=1200,580")
         browser = webdriver.Chrome(options=options)
         rootpath = os.getcwd() + '/html'
         counter = 0
