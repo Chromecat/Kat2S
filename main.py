@@ -76,7 +76,7 @@ def set_textfield_inputs():
     numbersteps = entryNumbersteps.get()
 
 
-def create_gif():
+def create():
     if entryAddress.get() and int(entryTimesteps.get()) and int(entryNumbersteps.get()):
 
         create_json_config_file()
@@ -192,7 +192,7 @@ entryTimesteps.pack(side=RIGHT, expand=YES, fill=X)
 separator = Frame(container1, height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=10)
 
-buttonStart = Button(container1, text='Start', padx=25, pady=5, command=create_gif)
+buttonStart = Button(container1, text='Start', padx=25, pady=5, command=create)
 myFont = font.Font(family='Helvetica', size=10, weight='bold')
 buttonStart['font'] = myFont
 buttonStart.pack(side=RIGHT, padx=5, pady=(5, 10))
