@@ -1,4 +1,6 @@
-import re, folium, math
+import re
+import folium
+import math
 
 
 def creategeojson(point, dummy):  # geojson erstellen aus dummy
@@ -27,10 +29,11 @@ def newpointcore(point, x, windspeed, winddirection, steps):  # erstellen der co
 
 def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, target2, steps):  # erstellen der polygone
     newpointlon1 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection + degreesplit)) \
-             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
+             / math.cos(point[x][1] * math.pi/180) * (windspeed * steps * 60)
+    # * math.cos(lenghtcorrection(degreesplit))
     # print(math.cos(math.radians(winddirection+degreesplit)))
     newpointlat1 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection + degreesplit)) \
-             * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
+                   * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
     if x >= 1:
         del target1[-1]
     target1.append([newpointlon1, newpointlat1])
@@ -39,7 +42,8 @@ def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, targe
     # für das gespiegelte polygon
 
     newpointlon2 = point[x][0] + (180 / (math.pi * 6137000)) * math.cos(math.radians(winddirection - degreesplit)) \
-            / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60)  # * math.cos(lenghtcorrection(degreesplit))
+            / math.cos(point[x][1] * math.pi / 180) * (windspeed * steps * 60)
+    # * math.cos(lenghtcorrection(degreesplit))
 
     newpointlat2 = point[x][1] + (180 / (math.pi * 6137000)) * math.sin(math.radians(winddirection - degreesplit)) \
                   * (windspeed * steps * 60)  # * math.sin(lenghtcorrection(degreesplit))
@@ -50,13 +54,14 @@ def newpointpoly(point, x, windspeed, winddirection, degreesplit, target1, targe
 
 # mathematische funktionen
 
+
 def createangle(input, distance):
     return math.degrees(math.asin(input/math.sqrt((input * input) + (distance * distance))))
 
 
 def distancepoints(x1, y1, x2, y2):
     return 6137000 * math.acos(math.sin(math.radians(y1)) * math.sin(math.radians(y2)) + math.cos(math.radians(y1))
-                    * math.cos(math.radians(y2)) * math.cos(math.radians(x2 - x1)))
+                               * math.cos(math.radians(y2)) * math.cos(math.radians(x2 - x1)))
 
 
 def creatzoom(windspeed, numbersteps, timesteps):  # generiert dynamische zoomstufen

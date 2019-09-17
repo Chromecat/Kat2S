@@ -87,7 +87,7 @@ def create():
         filenames = []
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
-        options.add_argument("--window-size=1200,580")
+        options.add_argument("--window-size=1300,680")
         browser = webdriver.Chrome(options=options)
         rootpath = os.getcwd() + '/html'
         counter = 0
