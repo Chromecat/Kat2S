@@ -4,4 +4,4 @@ Dieses Projekt wurde vorerst für Windows konzipiert, insbesondere aufgrund der 
 
 Zur Ausführung dieses Projekts wird aktuell Python (Python Shell), bzw. die IDE Pycharm vorausgesetzt.
 
-Weitere Informationen zum Projekt befinden sich im Ordner "Information". Dort kann unter anderem die Verwendung des Projekts anhand eines Beispiels mit Screenshots nachvollzogen werden.
+Weitere Informationen zum Projekt befinden sich im Ordner "information". Dort kann unter anderem die Verwendung des Projekts anhand eines Beispiels mit Screenshots nachvollzogen werden.
